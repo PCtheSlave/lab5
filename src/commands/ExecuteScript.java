@@ -3,6 +3,7 @@ package commands;
 import interfaces.CommandWithArguments;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -12,6 +13,7 @@ public class ExecuteScript implements CommandWithArguments {
     Set<String> scriptsInProcess = new HashSet<>();
     Scanner scanner;
     CommandInvoker invoker;
+    String[] arguments;
 
     public ExecuteScript(CommandInvoker invoker, Scanner scanner) {
         this.scanner = scanner;
@@ -20,7 +22,7 @@ public class ExecuteScript implements CommandWithArguments {
 
     @Override
     public void execute() {
-        String fileName = scanner.nextLine();
+        String fileName = arguments[0];
         File file = new File(fileName);
         String absolutePath = file.getAbsolutePath();
 
@@ -41,7 +43,6 @@ public class ExecuteScript implements CommandWithArguments {
             }
             System.out.println("Все команды были успешно выполнены.");
         } catch (Exception e) {
-            e.printStackTrace();
             System.err.println("Непредвиденная ошибка при выполнении скрипта.");
         }
         scriptsInProcess.remove(absolutePath);
@@ -54,5 +55,6 @@ public class ExecuteScript implements CommandWithArguments {
 
     @Override
     public void getArguments(String[] arguments) {
+        this.arguments = arguments;
     }
 }

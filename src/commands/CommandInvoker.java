@@ -5,6 +5,7 @@ import interfaces.Command;
 import interfaces.CommandWithArguments;
 import utils.DragonFieldsReader;
 
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
@@ -32,22 +33,25 @@ public class CommandInvoker {
         register("info", new Info(collectionManager));
         register("show", new Show(collectionManager));
         register("add", new Add(collectionManager));
-        register("update", new Update(collectionManager, in));
-        register("remove_by_id", new RemoveById(collectionManager, in));
+        registerWithArgument("update", new Update(collectionManager, in));
+        registerWithArgument("remove_by_id", new RemoveById(collectionManager, in));
         register("clear", new Clear(collectionManager));
         register("save", new Save(collectionManager));
-        register("execute_script", new ExecuteScript(this, in));
+        registerWithArgument("execute_script", new ExecuteScript(this, in));
         register("exit", new Exit());
         register("shuffle", new Shuffle(collectionManager));
         register("remove_greater", new RemoveGreater(collectionManager));
         register("remove_lower", new RemoveLower(collectionManager));
         register("average_of_weight", new AverageOfWeight(collectionManager));
         register("group_by_age", new GroupCountingByAge(collectionManager));
-        register("filter_by_weight", new FilterByWeight(collectionManager, in));
+        registerWithArgument("filter_by_weight", new FilterByWeight(collectionManager, in));
     }
 
     private void register(String name, Command command) {
         commandWithoutArguments.put(name, command);
+    }
+    private void registerWithArgument(String name, CommandWithArguments command) {
+        commandWithArguments.put(name, command);
     }
 
     public void execute(String firstLineCommand) {
