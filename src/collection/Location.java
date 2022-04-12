@@ -13,9 +13,9 @@ public class Location {
 
     @Override
     public String toString() {
-        return "x=" + x +
-                ", y=" + y +
-                ", name=" + name;
+        return "xKiller=" + x +
+                ", yKiller=" + y +
+                ", nameLocation=" + name;
     }
 
     public Double getX() {

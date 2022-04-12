@@ -57,7 +57,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "name=" + name +
+        return "nameKiller=" + name +
                 ", passportID=" + passportID +
                 ", hairColor=" + hairColor +
                 ", nationality=" + nationality + ", " + location;
