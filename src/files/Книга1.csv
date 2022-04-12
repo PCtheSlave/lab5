@@ -1,0 +1,4 @@
+id=1, name=12, x=12.0, y=12, creationDate=2022-04-11T13:57:00.551589, age=12, weight=12, speaking=true, character=GOOD, name=12, passportID=12, hairColor=RED, nationality=USA, x=12.0, y=12, name=12, ku=gv
+id=2, name=14, x=14.0, y=14, creationDate=2022-04-11T13:57:54.119082, age=14, weight=14, speaking=false, character=WISE, name=11, passportID=1, hairColor=RED, nationality=USA, x=12.0, y=12, name=12
+id=3, name=11, x=11.0, y=11, creationDate=2022-04-11T13:59:54.429281, age=11, weight=12, speaking=false, character=CHAOTIC, name=sd, passportID=wed, hairColor=YELLOW, nationality=THAILAND, x=123.0, y=1123, name=wefwe
+id=4, name=12, x=12.0, y=12, creationDate=2022-04-11T14:27:58.331316, age=12, weight=12, speaking=true, character=GOOD, name=12, passportID=12, hairColor=RED, nationality=USA, x=12.0, y=12, name=12
